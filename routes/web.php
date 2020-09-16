@@ -14,7 +14,10 @@ use App\inscrits;
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', [
+	'as' => 'root_path',
+	'uses' => 'WelcomeController@index' 
+]);
 
 Route::post('/signup',function(){
 	// dd($_POST['name']);
@@ -38,12 +41,22 @@ Route::post('/signup',function(){
 	) */
 });
 
-Route::get('/signup',function(){
-	return view('/pages/signup');
-});
+Route::get('/signup',[
+	'as' => 'signup_path',
+	'uses' => 'SignupController@index' 
+]);
 
-Route::get('/accueil','AccueilController@index');
-Route::get('/signin','SigninController@index');
-Route::get('/formation','FormationController@index');
+Route::get('/accueil',[
+	'as' => 'accueil_path',
+	'uses' => 'AccueilController@index' 
+]);
+Route::get('/signin',[
+	'as' => 'signin_path',
+	'uses' => 'SigninController@index' 
+]);
+Route::get('/formation',[
+	'as' => 'formation_path',
+	'uses' => 'FormationController@index' 
+]);
 
  

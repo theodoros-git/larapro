@@ -26,9 +26,9 @@
                  </div>
              </div>
              <div  class="w3-bar w3-green container w3-border  ">
-                    <a  class="w3-mobile w3-bar-item  w3-button hover w3-white w3-hover-text-blue "   href="accueil"><i class="fa fa-home"></i>  Accueil</a>
-                    <a class="w3-mobile w3-bar-item  w3-button hover w3-hover-white w3-hover-text-blue w3-right"    href="signup">S'inscrire</a>
-                    <a class="w3-mobile w3-bar-item  w3-button hover w3-hover-white w3-hover-text-blue w3-right "    href="signin"><i class="fa fa-sign-in"></i>Se connecter</a>
+                    <a  class=" {{ set_active_route('accueil_path') }} w3-mobile w3-bar-item  w3-button hover w3-white w3-hover-text-blue "   href="accueil"><i class="fa fa-home"></i>  Accueil</a>
+                    <a class=" {{ set_active_route('signup_path') }} w3-mobile w3-bar-item  w3-button hover w3-hover-white w3-hover-text-blue w3-right"    href="signup">S'inscrire</a>
+                    <a class=" {{ set_active_route('signin_path') }} w3-mobile w3-bar-item  w3-button hover w3-hover-white w3-hover-text-blue w3-right "    href="signin"><i class="fa fa-sign-in"></i>Se connecter</a>
                     
              </div>           
             @yield('header')
