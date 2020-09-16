@@ -1,1 +1,1 @@
-@extends('layouts/layoutstruct')
+@extends('layouts/layoutstruct', ['title' => 'Formations'])

@@ -1,9 +1,4 @@
-@extends('layouts/layoutstruct')
-   {{-- LA SECTION DES TITRES --}}
-     @section('title')
-        Accueil
-     @stop
-
+@extends('layouts/layoutstruct', ['title' => 'Accueil'])
 
    {{-- LA SECTION DES STYLES  --}}
      @section('style')

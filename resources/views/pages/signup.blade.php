@@ -1,8 +1,5 @@
-@extends('layouts/layoutstruct')
-   {{-- LA SECTION DES TITRES --}}
-     @section('title')
-        Sign-up
-     @stop
+@extends('layouts/layoutstruct', ['title' => 'Sign-Up'])
+   
 
 
    {{-- LA SECTION DES STYLES  --}}

@@ -1,8 +1,5 @@
-@extends('/layouts/layoutstruct')
-   {{-- LA SECTION DES TITRES --}}
-     @section('title')
-        Sign-in
-     @stop
+@extends('/layouts/layoutstruct', ['title' => 'Sign-In'])
+  
 
 
    {{-- LA SECTION DES STYLES  --}}
