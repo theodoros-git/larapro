@@ -27,19 +27,22 @@
                 </div>
                 <div class="col-md-6 w3-border w3-round-xlarge">
                     <h2 style="text-align: center; background-color: green;">Sign Up</h2>
-                    <form class="p-5 pink-text" action="signup" method="post">
+                    <form class="p-5 pink-text" action="{{ route('signup_path') }}" method="post" novalidate>
                         {{ csrf_field() }}
                         <div class="md-form form-sm"> 
                             <label for="name" ><span style="color: green; font-weight: ; ">Noms</span></label>:
-                            <input type="text"  name="name" id="name" class="form-control form-control-sm" required autofocus>
+                            <input type="text"  name="name" id="name" class="form-control form-control-sm" required autofocus value="{{ old('name') }} ">
+                            {!! $errors->first('name', '<span class="help-block">This field is required</span> ') !!}
                         </div>
                         <div class="md-form form-sm"> 
                             <label for="prename" ><span style="color: green; font-weight: ; ">Prénoms</span></label>:
-                            <input type="text" name="prename" id="prename" class="form-control form-control-sm" required autofocus>
+                            <input type="text" name="prename" id="prename" class="form-control form-control-sm" required autofocus value="{{ old('prename') }} ">
+                            {!! $errors->first('prename', '<span class="help-block">This field is required</span> ') !!}
                         </div>
                         <div class="md-form form-sm"> 
                             <label for="phone" ><span style="color: green; font-weight: ; ">Téléphone</span></label>:
-                            <input type="tel" name="phone" id="phone" class="form-control form-control-sm" required autofocus>
+                            <input type="tel" name="phone" id="phone" class="form-control form-control-sm" required autofocus value="{{ old('phone') }} ">
+                            {!! $errors->first('phone', '<span class="help-block">This field is required</span> ') !!}
                         </div>
                         <div class="md-form form-sm">                       
                             <p class="text-center">
@@ -58,23 +61,25 @@
                                     
                                 </select>
                             </p>
+                            {!! $errors->first('niveau', '<span class="help-block">This field is required</span> ') !!}
                         </div>
                         <div class="md-form form-sm"> 
                             <label for="email" ><span style="color: green; font-weight: ; ">Votre addresse E-mail</span></label>:
-                            <input type="email" name="email" id="email" class="form-control form-control-sm" required autofocus>
+                            <input type="email" name="email" id="email" class="form-control form-control-sm" required autofocus value="{{ old('email') }} ">
+                            {!! $errors->first('email', '<span class="help-block">This field is required</span> ') !!}
                         </div>
                         <div class="md-form form-sm"> 
                             <label for="mdp"><span style="color: green; font-weight: ;" >Mot de passe</span></label>:
-                            <input type="password" name="mdp" id="mdp" class="form-control form-control-sm" required>
-                            
+                            <input type="password" name="mdp" id="mdp" class="form-control form-control-sm" required value="{{ old('mdp') }} ">
+                            {!! $errors->first('mdp', '<span class="help-block">This field is required</span> ') !!}
                         </div>
                         <div class="md-form form-sm"> 
                             <label for="cmdp"><span style="color: green; font-weight: ;" >Confirmer Mot de passe</span></label>:
-                            <input type="password" name="cmdp" id="cmdp" class="form-control form-control-sm" required>
-                            
+                            <input type="password" name="cmdp" id="cmdp" class="form-control form-control-sm" required value="{{ old('cmdp') }} ">
+                            {!! $errors->first('cmdp', '<span class="help-block">This field is required</span> ') !!}
                         </div>
                         <div class="text-center mt-4">
-                            <button class="btn btn-success">Envoyer<i class="far fa-paper-planeml-1"></i></button>
+                            <button class="btn btn-success" type="submit">Envoyer<i class="far fa-paper-planeml-1"></i></button>
                         </div>
                     </form>
           
@@ -86,17 +91,7 @@
             </div>
             <!--Grid row-->
         </div>
-        <?php
-            if (isset($_POST['prename']) AND isset($_POST['name'])) // On a le nom
-//et le prénom
-                {
-                    echo 'Bonjour ' . $_POST['prename'] . ' ' . $_POST['name'] . ' !';
-                }
-            else // Il manque des paramètres, on avertit le visiteur
-                {
-                    echo 'Il faut renseigner un nom et un prénom !';
-                } 
-        ?>
+        
      @stop
 
 

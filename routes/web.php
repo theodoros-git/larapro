@@ -45,6 +45,15 @@ Route::get('/signup',[
 	'as' => 'signup_path',
 	'uses' => 'SignupController@index' 
 ]);
+Route::get('/contact',[
+	'as' => 'contact_path',
+	'uses' => 'ContactController@index' 
+]);
+
+Route::post('/signup',[
+	'as' => 'signup_path',
+	'uses' => 'SignupController@store' 
+]);
 
 Route::get('/accueil',[
 	'as' => 'accueil_path',
@@ -53,6 +62,10 @@ Route::get('/accueil',[
 Route::get('/signin',[
 	'as' => 'signin_path',
 	'uses' => 'SigninController@index' 
+]);
+Route::post('/signin',[
+	'as' => 'signin_path',
+	'uses' => 'SigninController@store' 
 ]);
 Route::get('/formation',[
 	'as' => 'formation_path',

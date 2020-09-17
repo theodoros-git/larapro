@@ -27,18 +27,20 @@
                 </div>
                 <div class="col-md-6 w3-border w3-round-xlarge">
                     <h2 style="text-align: center; background-color: green;">Login</h2>
-                    <form class="p-5 pink-text" action="" method="get">
+                    <form class="p-5 pink-text" action="{{ route('signin_path') }}" method="post" novalidate>
+                    {{ csrf_field() }}
                         <div class="md-form form-sm"> 
                             <label for="email" ><span style="color: green; font-weight: ; ">Votre addresse E-mail</span></label>:
-                            <input type="email" id="email" class="form-control form-control-sm" required autofocus>
+                            <input type="email" name="email" id="email" class="form-control form-control-sm" required autofocus value="{{ old('email') }}">
+                            {!! $errors->first('email', '<span class="help-block">This field is required</span> ') !!}
                         </div>
                         <div class="md-form form-sm"> 
                             <label for="mdp"><span style="color: green; font-weight: ;" >Mot de passe</span></label>:
-                            <input type="password" id="mdp" class="form-control form-control-sm" required>
-                            
+                            <input type="password" name="mdp" id="mdp" class="form-control form-control-sm" required value="{{ old('mdp') }}">
+                            {!! $errors->first('mdp', '<span class="help-block">This field is required</span> ') !!}
                         </div>
                         <div class="text-center mt-4">
-                            <button class="btn btn-success">Envoyer<i class="far fa-paper-planeml-1"></i></button>
+                            <button class="btn btn-success" type="submit">Envoyer<i class="far fa-paper-planeml-1"></i></button>
                         </div>
                     </form>
           

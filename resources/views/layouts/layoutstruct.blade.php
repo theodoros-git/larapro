@@ -11,6 +11,10 @@
         <link rel="stylesheet" href="/mdb.min.css">
         <link rel="stylesheet" href="/mdb.css">
         <link rel="stylesheet" type="text/css" href="/app/w3.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="/app/w3.css">
         @yield('style')
         <style >
             
@@ -26,9 +30,10 @@
                  </div>
              </div>
              <div  class="w3-bar w3-green container w3-border  ">
-                    <a  class=" {{ set_active_route('accueil_path') }} w3-mobile w3-bar-item  w3-button hover w3-white w3-hover-text-blue "   href="accueil"><i class="fa fa-home"></i>  Accueil</a>
-                    <a class=" {{ set_active_route('signup_path') }} w3-mobile w3-bar-item  w3-button hover w3-hover-white w3-hover-text-blue w3-right"    href="signup">S'inscrire</a>
-                    <a class=" {{ set_active_route('signin_path') }} w3-mobile w3-bar-item  w3-button hover w3-hover-white w3-hover-text-blue w3-right "    href="signin"><i class="fa fa-sign-in"></i>Se connecter</a>
+                    <a  class=" {{ set_active_route('accueil_path') }} w3-mobile w3-bar-item  w3-button hover w3-white w3-hover-text-blue "   href="{{ route('root_path') }}"><i class="fa fa-home"></i>  Accueil</a>
+                    <a class=" {{ set_active_route('signup_path') }} w3-mobile w3-bar-item  w3-button hover w3-hover-white w3-hover-text-blue w3-right"    href="{{ route('signup_path') }}">S'inscrire</a>
+                    <a class=" {{ set_active_route('signin_path') }} w3-mobile w3-bar-item  w3-button hover w3-hover-white w3-hover-text-blue w3-right "    href="{{ route('signin_path') }}"><i class="fa fa-sign-in"></i>Se connecter</a>
+                    <a class=" {{ set_active_route('signup_path') }} w3-mobile w3-bar-item  w3-button hover w3-hover-white w3-hover-text-blue w3-right"    href="{{ route('contact_path') }}">Contactez-Nous</a>
                     
              </div>           
             @yield('header')
@@ -86,23 +91,8 @@
         <h5 class="text-uppercase text-center w3-green">About Us</h5>
         <P>"MOBIWEB" est un centre de formation professionnelle et pratique ayant pour objectifs de former des leadres capables de pouvoir s'entreprendre dans les domaines de formations tels que l'informatique, le graphisme etc... </P>
       </div>
-      <div class="col-lg-4 col-md-4 mb-4 mb-md-0 w3-border w3-round-xlarge">
-        <h5 class="text-uppercase mb-0 text-center w3-green">Contactez-Nous</h5>
-
-        <ul class="list-unstyled">
-          <li>
-            <h4 ><strong style="text-decoration: underline;">Téléphone:</strong>   97227987</h4>
-          </li>
-          <li>
-            <h4 ><strong style="text-decoration: underline;">Email:</strong>   kossitheodore@gmail.com</h4>
-          </li>
-          <li>
-            
-          </li>
-          <li>
-            
-          </li>
-        </ul>
+      <div class="col-lg-4 col-md-4 mb-4 mb-md-0 ">
+        
       </div>
       <!--Grid column-->
 
@@ -123,7 +113,7 @@
         <div class="col-md-5 col-12 mb-4 mb-md-0">
           <!-- Email input -->
           <div class="form-outline mb-4">
-            <input type="email" id="email" class="form-control" />
+            <input type="email" id="email" class="form-control" >
             <label class="form-label" for="email">Addresse Email</label>
           </div>
         </div>
